@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanubox</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #85c5e9;
+            padding: 1rem;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px;
+        }
+        nav {
+            background-color: #248dc1;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+        }
+        .filters {
+            margin-bottom: 1.5rem;
+        }
+        .filters button {
+            margin-right: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #248dc1;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .filters button.active {
+            background-color: #1a6d95;
+        }
+        footer {
+            background-color: #85c5e9;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .product {
+            border-bottom: 1px solid #ccc;
+            padding: 1rem 0;
+        }
+        .product:last-child {
+            border-bottom: none;
+        }
+        .product h3 {
+            margin: 0;
+            color: #248dc1;
+        }
+        .product p {
+            margin: 0.25rem 0;
+        }
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+    <script>
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product');
+            products.forEach(p => {
+                if (category === 'alla' || p.classList.contains(category)) {
+                    p.style.display = 'block';
+                } else {
+                    p.style.display = 'none';
+                }
+            });
+            document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`#filter-${category}`).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="Logo-6.png" alt="Nanubox logotyp">
+    </header>
+    <nav>
+        <a href="index.html">Om oss</a>
+        <a href="nanubox_Produkter.html">Produkter</a>
+        <a href="Kontakt.html">Kontakta oss</a>
+    </nav>
+    <div class="container">
+        <h1 align="center">Produkter i våra automater        </h1>
+        <p align="center">Här kan du se det urval av produkter vi erbjuder. Du kan filtrera efter kategori nedan:</p>
+        <p align="center"><img src="../Broschyr/pexels-w-r_t2-422913096-15781933 (2).JPG" width="226" height="169"></p>
+
+        <div class="filters">
+          <button id="filter-alla" class="active" onclick="filterProducts('alla')">Alla</button>
+            <button id="filter-lask" onclick="filterProducts('lask')">Läsk</button>
+            <button id="filter-godis" onclick="filterProducts('godis')">Godis</button>
+            <button id="filter-mellanmal" onclick="filterProducts('mellanmal')">Mellanmål</button>
+        </div>
+
+        <div class="product lask">
+            <h3>Exempelprodukt: Hallonläsk</h3>
+            <p><strong>Innehåll:</strong> Kolsyrat vatten, socker, hallonarom, färgämne (E120)</p>
+            <p><strong>Pris:</strong> 20 kr</p>
+        </div>
+
+        <div class="product mellanmal">
+            <h3>Exempelprodukt: Nötmix</h3>
+            <p><strong>Innehåll:</strong> Jordnötter, cashewnötter, mandlar (kan innehålla spår av andra nötter)</p>
+            <p><strong>Pris:</strong> 25 kr</p>
+        </div>
+
+        <div class="product godis">
+            <h3>Exempelprodukt: Chokladbit</h3>
+            <p><strong>Innehåll:</strong> Socker, kakao, mjölkpulver, emulgeringsmedel (sojalecitin)</p>
+            <p><strong>Pris:</strong> 15 kr</p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Nanubox. Alla rättigheter förbehållna.
+    </footer>
+</body>
+</html>
