@@ -1,0 +1,29 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+header, nav, footer {
+    background-color: #3da9df;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+.container {
+    background: white;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.product {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
